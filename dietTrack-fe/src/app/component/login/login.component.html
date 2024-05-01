@@ -1,0 +1,11 @@
+<div class="login">
+    <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input type="email" name="family_name" [(ngModel)]="loginObj.family_name" placeholder="Family Name" required="">
+        <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" required="">
+        <button (click)="onLogin()" >Login</button>
+        <a [routerLink]="['/signup']">Sign up</a>
+    </form>
+
+
+<router-outlet></router-outlet>
