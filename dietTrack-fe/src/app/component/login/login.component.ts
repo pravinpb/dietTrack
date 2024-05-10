@@ -31,7 +31,7 @@ export class LoginComponent {
     this.http.post('http://localhost:5000/login', this.loginObj, { headers: headers }).subscribe((res:any) => {
          console.log(res[1]);
          alert('Login Success');
-         localStorage.setItem('token', res[1]);
+         localStorage.setItem('token', res[1])
          this.router.navigate(['/members']);
        }
     );
