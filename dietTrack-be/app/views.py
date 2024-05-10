@@ -17,7 +17,7 @@ import jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-app.config['SECRET_KEY'] = '9\xbc\xa2AC\xf7\x86\xc1{Uw\xe0'
+app.config['SECRET_KEY'] = '9\xbc\xa2AB\xf7\x86\xc1{Uw\xe0'
 
 
 

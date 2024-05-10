@@ -52,6 +52,7 @@ class cycles(MethodView):
         return jsonify({'message': 'Cycle deleted successfully'}), 200
     
     
+    
 cycles_list = cycles.as_view('cycles_list')
 app.add_url_rule('/members/cycles/<int:member_id>', view_func=cycles_list, methods=['GET', 'POST'])
 app.add_url_rule('/members/cycles/<int:cycle_id>', view_func=cycles_list, methods=['PUT', 'DELETE'])
