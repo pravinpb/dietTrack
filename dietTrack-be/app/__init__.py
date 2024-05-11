@@ -30,7 +30,7 @@ def token_required(f):
     def decorated(*args, **kwargs):
 
 
-        token = request.headers.get('Authorization')
+        token = request.headers["Accesstoken"]
         print("Authorization Header: ", token)
 
         if not token:
@@ -61,46 +61,7 @@ def token_required(f):
         return f(current_user, *args, **kwargs)
     return decorated
 
-# def token_required(f):
-#     @wraps(f)
-#     def decorated(*args, **kwargs):
 
-#         conn = psycopg2.connect(
-#             host="localhost",
-#             database="postgres",
-#             user="postgres",
-#             password="pravinpb",
-#             port="5200")
-        
-#         token = request.headers['authorization']
-
-#         print(token)
-#         if not token:
-#             return jsonify({'message': 'Token is missing'}), 401
-        
-#         try:
-#             data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
-    
-#             with conn.cursor(cursor_factory=DictCursor) as cur:
-#                 cur.execute("SELECT * FROM family WHERE public_id = %s;", (data['public_id'],))
-#                 userdata = cur.fetchone()
-#                 print(userdata)
-#             current_user = userdata
-            
-#         except jwt.ExpiredSignatureError:
-#             return jsonify({'message': 'Token has expired'}), 401
-#         except jwt.InvalidTokenError:
-#             return jsonify({'message': 'Token is invalid'}), 401
-
-#         return f(current_user, *args, **kwargs)
-#     return decorated
-
-@app.route('/debug_headers', methods=['GET'])
-def debug_headers():
-    token = jsonify(request.headers.get('Authorization'))
-    print(token)
-  
-    return token
 
 
 from app import views
