@@ -4,6 +4,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { MembersComponent } from './component/members/members.component';
+import { AddMemberComponent } from './component/add-member/add-member.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,11 @@ const routes: Routes = [
       {
         path:'members',
         component:MembersComponent
-      }
+      },
+      {
+        path:'add-member',
+        component:AddMemberComponent
+      },
     ]
   },
   {
