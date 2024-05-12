@@ -1,4 +1,6 @@
-/* General styles for the list */
+
+
+
 #members {
     list-style-type: none;
     padding: 0;
@@ -33,7 +35,7 @@
     margin-top: 10px;
   }
   
-  .edit-btn,.delete-btn {
+  .edit-btn,.delete-btn,.add-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -54,9 +56,13 @@
   .delete-btn {
     background-color: #dc3545;
   }
-  
+  .add-button {
+    background-color: #007bff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
   /* Hover effect for buttons */
-  .edit-btn:hover,.delete-btn:hover {
+  .edit-btn:hover,.delete-btn:hover ,.add-button:hover{
     opacity: 0.8;
   }
   

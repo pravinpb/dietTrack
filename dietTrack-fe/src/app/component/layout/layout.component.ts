@@ -17,4 +17,8 @@ export class LayoutComponent {
   onMembers(){
     this.router.navigate(['/members']);
   }
+
+  onHome(){
+    this.router.navigate(['/members']);
+  }
 }

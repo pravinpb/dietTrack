@@ -46,7 +46,7 @@ class members(MethodView):
         weight = data['weight']
         puberty = data['puberty']
         age_of_puberty = data['age_of_puberty']
-        menopause = data['menopause']
+        menopause = data['menupause']
         country = data['country']
 
         cur = self.conn.cursor(cursor_factory=DictCursor)
@@ -67,6 +67,7 @@ class members(MethodView):
 
 members_list = members.as_view('members_api')
 app.add_url_rule('/members', view_func=members_list, methods=['GET', 'POST', 'PUT'])
+app.add_url_rule('/add-member', view_func=members_list, methods=['GET', 'POST', 'PUT'])
 app.add_url_rule('/members/<int:member_id>', view_func=members_list, methods=['DELETE'])
 
 

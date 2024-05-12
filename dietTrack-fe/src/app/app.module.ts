@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MembersComponent } from './component/members/members.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { customerInterceptor } from './service/customer.service';
+import { AddMemberComponent } from './component/add-member/add-member.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { customerInterceptor } from './service/customer.service';
     SignupComponent,
     LoginComponent,
     MembersComponent,
-    LayoutComponent
+    LayoutComponent,
+    AddMemberComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class SignupComponent {
     "email": '',
     "password": ''
    };
-   
+    
    constructor(private http: HttpClient, private router:Router) { }
 
    onSignup() {
