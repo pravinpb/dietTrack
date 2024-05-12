@@ -12,8 +12,8 @@
       <p>Menopause: {{ member.menupause }}</p>
       <p>Country: {{ member.country }}</p>
       <div class="button-container">
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
+        <button class="edit-btn" (click)="onEditMember(i)">Edit</button>
+        <button class="delete-btn" (click)="onDeleteMember(i)">Delete</button>
       </div>
     </li>
   </ul>

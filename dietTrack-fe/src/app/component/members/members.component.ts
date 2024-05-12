@@ -1,3 +1,4 @@
+import { SharedService } from './../../service/shared.service';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -9,8 +10,9 @@ import { Router } from '@angular/router';
 })
 export class MembersComponent {
   membersList: any[] = []
+  editMember: any[] = []
 
-  constructor(private http: HttpClient, private router: Router) { 
+  constructor(private http: HttpClient, private router: Router,private shared: SharedService) { 
     if (!localStorage.getItem('token')) {
       console.log(localStorage.getItem('token'));
       this.router.navigate(['/login']);
@@ -28,6 +30,7 @@ export class MembersComponent {
         console.log("hwllo",response);
         for (let i = 0; i < response.length; i++) {
           const member = {
+            member_id : response[i][1],
             member_name : response[i][2],
             date_of_birth : response[i][3],
             gender :  response[i][4],
@@ -46,6 +49,24 @@ export class MembersComponent {
         console.error('Error fetching members:', error);
       }
     });
+  }
+
+  onEditMember(i: any) {
+    console.log("editMember", this.membersList[i]);
+    this.editMember = this.membersList[i];
+    this.shared.setMessage(this.editMember);
+    this.router.navigate(['/edit-members']);
+  }
+
+  onDeleteMember(i: any) {
+    console.log("deleteMember", this.membersList[i].member_id);
+      if (confirm('Are you sure you want to delete this task?')){
+      this.http.delete('http://localhost:5000/members/' + this.membersList[i].member_id).subscribe((res: any) => {
+        console.log(res);
+        this.membersList = [];
+        this.getMembers();
+      });
+  }
   }
 
 }

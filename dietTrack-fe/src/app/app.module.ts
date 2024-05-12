@@ -11,6 +11,7 @@ import { MembersComponent } from './component/members/members.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { customerInterceptor } from './service/customer.service';
 import { AddMemberComponent } from './component/add-member/add-member.component';
+import { EditMemberComponent } from './component/edit-member/edit-member.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AddMemberComponent } from './component/add-member/add-member.component'
     LoginComponent,
     MembersComponent,
     LayoutComponent,
-    AddMemberComponent
+    AddMemberComponent,
+    EditMemberComponent
   ],
   imports: [
     BrowserModule,
