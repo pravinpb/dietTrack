@@ -1,1 +1,20 @@
-<p>members works!</p>
+<ul id="members">
+  <button class = "add-button" (click)="onAddMember()">Add New Member</button>
+
+    <li *ngFor="let member of membersList; let i = index">
+      <h3>{{ member.member_name }}</h3>
+      <p>Date of Birth: {{ member.date_of_birth }}</p>
+      <p>Gender: {{ member.gender }}</p>
+      <p>Height: {{ member.height }}</p>
+      <p>Weight: {{ member.weight }}</p>
+      <p>Puberty: {{ member.puberty }}</p>
+      <p>Age of Puberty: {{ member.age_of_puberty }}</p>
+      <p>Menopause: {{ member.menupause }}</p>
+      <p>Country: {{ member.country }}</p>
+      <div class="button-container">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
+    </li>
+  </ul>
+  

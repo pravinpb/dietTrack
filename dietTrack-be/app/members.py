@@ -17,23 +17,23 @@ import jwt
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-app.config['SECRET_KEY'] = '9\xbc\xa2AC\xf7\x86\xc1{Uw\xe0'
+app.config['SECRET_KEY'] = '9\xbc\xa2AB\xf7\x86\xc1{Uw\xe0'
 
-
+ 
 
 class members(MethodView):
 
-    def __init__(self):
+    @token_required
+    def __init__(current_user,self):
         self.conn = conn()
-
+    print("token_required")
     @token_required
     def get(current_user,self):
         cur = self.conn.cursor(cursor_factory=DictCursor)
         cur.execute("SELECT * FROM members WHERE family_id = %s;", (current_user[0],))
         data = cur.fetchall()
         self.conn.commit()
-
-        return jsonify(data)
+        return data
     
     @token_required
     def post(current_user,self):
@@ -46,7 +46,7 @@ class members(MethodView):
         weight = data['weight']
         puberty = data['puberty']
         age_of_puberty = data['age_of_puberty']
-        menopause = data['menopause']
+        menopause = data['menupause']
         country = data['country']
 
         cur = self.conn.cursor(cursor_factory=DictCursor)
@@ -55,6 +55,7 @@ class members(MethodView):
 
         return jsonify({'message': 'User Created'})
     
+    @token_required
     def delete(self, member_id):
         with self.conn.cursor() as cur:
             cur.execute("DELETE FROM members WHERE member_id = %s", (member_id,))
@@ -66,6 +67,7 @@ class members(MethodView):
 
 members_list = members.as_view('members_api')
 app.add_url_rule('/members', view_func=members_list, methods=['GET', 'POST', 'PUT'])
+app.add_url_rule('/add-member', view_func=members_list, methods=['GET', 'POST', 'PUT'])
 app.add_url_rule('/members/<int:member_id>', view_func=members_list, methods=['DELETE'])
 
 
@@ -80,7 +82,7 @@ class memberDetails(MethodView):
         cur.execute("SELECT * FROM members WHERE member_id = %s;", (member_id,))
         data = cur.fetchone()
         self.conn.commit()
-
+ 
         return jsonify(data)
     
 

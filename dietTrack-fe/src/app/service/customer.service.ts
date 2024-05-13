@@ -8,7 +8,7 @@ export class customerInterceptor implements HttpInterceptor {
     const token = localStorage.getItem('token');
     console.log('token', token);
     const newClone = req.clone({
-      setHeaders: {Authorization: `${token}`} 
+      setHeaders: {accesstoken: `${token}`} 
     });
     console.log('newClone', newClone);
     return next.handle(newClone);

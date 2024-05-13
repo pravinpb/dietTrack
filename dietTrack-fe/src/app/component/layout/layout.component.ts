@@ -13,4 +13,12 @@ export class LayoutComponent {
     localStorage.removeItem('token');
     this.router.navigate(['/login']);
   }}
+
+  onMembers(){
+    this.router.navigate(['/members']);
+  }
+
+  onHome(){
+    this.router.navigate(['/members']);
+  }
 }
