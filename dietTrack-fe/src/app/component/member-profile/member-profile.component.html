@@ -1,15 +1,29 @@
 <div class="profile-section">
-    <button id = "addDateButton">Add Cycle Start Date</button>
+    <button id="addCycleButton" (click)="onAddCycle()">Add Cycle Start Date</button>
+    <div #inputContainer></div>
+    <button *ngIf="inputsAdded" id="submitCycleButton" (click)="onSubmit()">Submit</button>
+
     <ul id="members">
         <li>
             <h3>{{ member_profile.member_name }}</h3>
             <p>Date of Birth: {{ formatDate(member_profile.date_of_birth) }}</p>
             <p>Gender: {{ member_profile.gender }}</p>
-            <p>Height: {{ member_profile.height }}  Weight: {{ member_profile.weight }}</p>
+            <p>Height: {{ member_profile.height }}, Weight: {{ member_profile.weight }}</p>
             <p>Puberty: {{ member_profile.puberty }}</p>
             <p>Age of Puberty: {{ member_profile.age_of_puberty }}</p>
             <p>Menopause: {{ member_profile.menupause }}</p>
             <p>Country: {{ member_profile.country }}</p>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let date of cycle_list; let i = index">
+            <h3>Cycle {{i+1}}</h3>
+            <p>start date: {{formatDate(date.start_date)}}</p>
+            <p>end date: {{formatDate(date.end_date)}}</p>
+
         </li>
     </ul>
 </div>
