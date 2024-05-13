@@ -24,7 +24,7 @@ app.config['SECRET_KEY'] = '9\xbc\xa2AC\xf7\x86\xc1{Uw\xe0'
 class cycles(MethodView):
     def __init__(self):
         self.conn = conn()
-
+ 
     @token_required
     def post(current_user,self,member_id):
         data = request.get_json()

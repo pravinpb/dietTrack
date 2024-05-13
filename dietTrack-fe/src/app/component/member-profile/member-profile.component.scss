@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+.profile-section,
+#members h3,
+#members p {
+  font-family: 'Poppins', sans-serif; /* Specify Poppins as the primary font, with sans-serif as a fallback */
+}
+
+.profile-section {
+    border: none; /* Remove the box around the section */
+    border-radius: 10px; /* More rounded corners */
+    padding: 30px;
+    margin: 20px auto;
+    margin-top: 100px; /* Center the section horizontally */
+    max-width: 600px; /* Wider max-width for potential image */
+    box-shadow: none; /* Remove drop shadow */
+  }
+  
+  /* Member list (assuming only one member is displayed) */
+  #members {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Member profile information */
+  #members li {
+    margin-bottom: 20px;
+  }
+  
+  #members h3 {
+    font-size: 1.5em; /* Larger font for name */
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; /* Darker text color for emphasis */
+  }
+  
+  #members p {
+    font-size: 1em;
+    color: #666; /* Lighter text color for details */
+    margin-bottom: 5px;
+  }
+  
+  /* Specific styles for profile details */
+  #members p:nth-child(2), /* Date of Birth */
+  #members p:nth-child(6), /* Puberty */
+  #members p:nth-child(8) { /* Menopause */
+    /* Consider using a placeholder or removing these elements entirely
+       depending on privacy requirements. */
+    font-style: italic; /* Italicize sensitive details to indicate discretion */
+  }
+  
+  /* Optional: Profile picture (adjust image size as needed) */
+  #members li img {
+    float: left; /* Position image to the left */
+    margin-right: 20px; /* Spacing between image and text */
+    width: 150px; /* Adjust width based on image size */
+    border-radius: 50%; /* Circular image */
+  }
+  

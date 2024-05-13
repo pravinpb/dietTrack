@@ -56,7 +56,7 @@ class members(MethodView):
         return jsonify({'message': 'User Created'})
     
     @token_required
-    def delete(self, member_id):
+    def delete(current_user,self, member_id):
         with self.conn.cursor() as cur:
             cur.execute("DELETE FROM members WHERE member_id = %s", (member_id,))
             self.conn.commit()
@@ -97,6 +97,16 @@ class memberDetails(MethodView):
         self.conn.commit()
 
         return jsonify({'message': 'Details Added'})
+    
+    @token_required
+    def delete(self, member_id):
+        print(member_id)
+        with self.conn.cursor() as cur:
+            cur.execute("DELETE FROM members WHERE member_id = %s", (member_id,))
+            self.conn.commit()
+
+        return jsonify({'message': 'Details Deleted'}
+                          )
     
 
     

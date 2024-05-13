@@ -1,21 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../../service/shared.service';
 
 @Component({
-  selector: 'app-add-member',
-  templateUrl: './add-member.component.html',
-  styleUrl: './add-member.component.scss'
+  selector: 'app-edit-member',
+  templateUrl: './edit-member.component.html',
+  styleUrl: './edit-member.component.scss'
 })
-export class AddMemberComponent {
-  
-  constructor(private http: HttpClient, private router: Router) { 
+export class EditMemberComponent {
+
+  edit_data: any[] = [];
+  constructor(private http: HttpClient, private router: Router, private shared: SharedService) { 
     if (!localStorage.getItem('token')) {
       console.log(localStorage.getItem('token'));
       this.router.navigate(['/login']);
     } 
-  }
 
+    this.edit_data = this.shared.getMessage();
+    console.log("edit_data 4", this.edit_data);
+  }
 
   memberObj: any = {
     "member_name": '',
@@ -29,9 +33,9 @@ export class AddMemberComponent {
     "country": ''
   }
 
-  onAddMember() {
+  onEditMember() {
     console.log("clickAddMember", this.memberObj);
-    this.http.post('http://localhost:5000/members', this.memberObj).subscribe((res: any) => {
+    this.http.put('http://localhost:5000/members', this.memberObj).subscribe((res: any) => {
       console.log(res);
       alert('Member Added');
       this.router.navigate(['/members']);
