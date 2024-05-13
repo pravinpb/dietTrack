@@ -1,0 +1,15 @@
+<div class="profile-section">
+    <button id = "addDateButton">Add Cycle Start Date</button>
+    <ul id="members">
+        <li>
+            <h3>{{ member_profile.member_name }}</h3>
+            <p>Date of Birth: {{ formatDate(member_profile.date_of_birth) }}</p>
+            <p>Gender: {{ member_profile.gender }}</p>
+            <p>Height: {{ member_profile.height }}  Weight: {{ member_profile.weight }}</p>
+            <p>Puberty: {{ member_profile.puberty }}</p>
+            <p>Age of Puberty: {{ member_profile.age_of_puberty }}</p>
+            <p>Menopause: {{ member_profile.menupause }}</p>
+            <p>Country: {{ member_profile.country }}</p>
+        </li>
+    </ul>
+</div>

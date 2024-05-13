@@ -25,6 +25,7 @@ export class MembersComponent {
   }
 
   getMembers() {
+
     this.http.get('http://localhost:5000/members').subscribe({
       next: (response: any) => {
         console.log("hwllo",response);
@@ -67,6 +68,13 @@ export class MembersComponent {
         this.getMembers();
       });
   }
+  }
+
+  onClickMember(i: any){
+    this.router.navigate(['/member-profile']);
+    this.shared.setMessage(this.membersList[i]);
+    console.log("this member",this.membersList[i]);
+
   }
 
 }

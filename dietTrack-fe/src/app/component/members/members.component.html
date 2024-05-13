@@ -1,7 +1,7 @@
 <ul id="members">
   <button class = "add-button" (click)="onAddMember()">Add New Member</button>
 
-    <li *ngFor="let member of membersList; let i = index">
+    <li *ngFor="let member of membersList; let i = index" (click)="onClickMember(i)">
       <h3>{{ member.member_name }}</h3>
       <p>Date of Birth: {{ member.date_of_birth }}</p>
       <p>Gender: {{ member.gender }}</p>
