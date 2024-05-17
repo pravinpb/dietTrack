@@ -1,19 +1,19 @@
 <ul id="members">
   <button class = "add-button" (click)="onAddMember()">Add New Member</button>
 
-    <li *ngFor="let member of membersList; let i = index">
+    <li *ngFor="let member of membersList; let i = index" (click)="onClickMember(i)">
       <h3>{{ member.member_name }}</h3>
-      <p>Date of Birth: {{ member.date_of_birth }}</p>
-      <p>Gender: {{ member.gender }}</p>
-      <p>Height: {{ member.height }}</p>
-      <p>Weight: {{ member.weight }}</p>
-      <p>Puberty: {{ member.puberty }}</p>
+      <!-- <p>Date of Birth: {{ member.date_of_birth }}</p> -->
+      <!-- <p>Gender: {{ member.gender }}</p> -->
+      <p>Height: {{ member.height }} Weight: {{ member.weight }}</p>
+      <!-- <p>Weight: {{ member.weight }}</p> -->
+      <!-- <p>Puberty: {{ member.puberty }}</p> -->
       <p>Age of Puberty: {{ member.age_of_puberty }}</p>
-      <p>Menopause: {{ member.menupause }}</p>
-      <p>Country: {{ member.country }}</p>
+      <!-- <p>Menopause: {{ member.menupause }}</p> -->
+      <!-- <p>Country: {{ member.country }}</p> -->
       <div class="button-container">
-        <button class="edit-btn">Edit</button>
-        <button class="delete-btn">Delete</button>
+        <button class="edit-btn" (click)="onEditMember(i)">Edit</button>
+        <button class="delete-btn" (click)="onDeleteMember(i)">Delete</button>
       </div>
     </li>
   </ul>

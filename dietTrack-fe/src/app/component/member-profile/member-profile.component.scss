@@ -1,0 +1,117 @@
+/* General styles for the profile section */
+.profile-section {
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    gap: 20px; /* Space between children */
+    padding: 20px;
+    padding-bottom: 0%;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    // height: 100vh;
+    margin-top: 100px;
+}
+
+/* Style for the add cycle button */
+#addCycleButton {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    font-size: 16px;
+    cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+#addCycleButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for the input container */
+#inputContainer {
+    width: 100%; /* Full width */
+    height: auto; /* Auto adjust height */
+    padding: 20px; /* Some padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-right: 10px;
+}
+
+/* Style for the submit button */
+#submitCycleButton {
+    background-color: #008CBA; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    font-size: 16px;
+    cursor: pointer; /* Cursor changes to pointer on hover */
+}
+
+#submitCycleButton:hover {
+    background-color: #007B9A; /* Darker blue on hover */
+}
+
+/* Style for the members list */
+#members {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+#members li {
+    // background-color: #f9f9f9; /* Light grey background */
+    padding: 10px; /* Add some padding inside each item */
+    margin-bottom: 10px; /* Space between items */
+}
+
+#members li h3 {
+    margin: 0; /* Remove default margin */
+    padding: 5px 0; /* Add some padding */
+    font-size: 30px;
+    color: #333; /* Dark grey text */
+}
+
+#members li p {
+    margin: 0; /* Remove default margin */
+    padding: 5px 0; /* Add some padding */
+    color: #666; /* Slightly lighter grey text */
+    font-size: 18px;
+}
+
+/* Style for the cycle display */
+.cycleDisplay {
+    width: 100%; /* Full width */
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    display: flex; /* Use Flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children horizontally */
+    align-items: center;
+
+}
+
+.cycleDisplay ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.cycleDisplay li {
+    background-color: #ffffff; /* White background for each item */
+    padding: 10px; /* Add some padding inside each item */
+    margin-bottom: 10px; /* Space between items */
+}
+
+.cycleDisplay li h3 {
+    margin: 0; /* Remove default margin */
+    padding: 5px 0; /* Add some padding */
+    color: #333; /* Dark grey text */
+}
+
+.cycleDisplay li p {
+    margin: 0; /* Remove default margin */
+    padding: 5px 0; /* Add some padding */
+    color: #666; /* Slightly lighter grey text */
+}

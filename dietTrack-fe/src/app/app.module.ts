@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +14,9 @@ import { MembersComponent } from './component/members/members.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { customerInterceptor } from './service/customer.service';
 import { AddMemberComponent } from './component/add-member/add-member.component';
+import { EditMemberComponent } from './component/edit-member/edit-member.component';
+import { MemberProfileComponent } from './component/member-profile/member-profile.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -19,20 +25,26 @@ import { AddMemberComponent } from './component/add-member/add-member.component'
     LoginComponent,
     MembersComponent,
     LayoutComponent,
-    AddMemberComponent
+    AddMemberComponent,
+    EditMemberComponent,
+    MemberProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    GoogleMapsModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: customerInterceptor,
       multi: true
-    }
+    },
+    provideAnimationsAsync('noop')
   ],
   bootstrap: [AppComponent]
 })

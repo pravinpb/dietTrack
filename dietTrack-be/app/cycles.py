@@ -24,10 +24,11 @@ app.config['SECRET_KEY'] = '9\xbc\xa2AC\xf7\x86\xc1{Uw\xe0'
 class cycles(MethodView):
     def __init__(self):
         self.conn = conn()
-
+ 
     @token_required
     def post(current_user,self,member_id):
         data = request.get_json()
+        print(data)
         print(data['start_date'],data['end_date'])
         with self.conn.cursor(cursor_factory=DictCursor) as cur:
             cur.execute("INSERT INTO cycle (member_id, start_date, end_date) VALUES (%s, %s, %s);", (member_id, data['start_date'], data['end_date']))

@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
   styleUrl: './add-member.component.scss'
 })
 export class AddMemberComponent {
+  
   constructor(private http: HttpClient, private router: Router) { 
     if (!localStorage.getItem('token')) {
       console.log(localStorage.getItem('token'));
       this.router.navigate(['/login']);
     } 
   }
+
 
   memberObj: any = {
     "member_name": '',

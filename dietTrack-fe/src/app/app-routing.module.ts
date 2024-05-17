@@ -5,6 +5,8 @@ import { SignupComponent } from './component/signup/signup.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { MembersComponent } from './component/members/members.component';
 import { AddMemberComponent } from './component/add-member/add-member.component';
+import { EditMemberComponent } from './component/edit-member/edit-member.component';
+import { MemberProfileComponent } from './component/member-profile/member-profile.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
         path:'add-member',
         component:AddMemberComponent
       },
+      {
+        path:'edit-members',
+        component:EditMemberComponent
+      },
+      {
+        path: 'member-profile',
+        component: MemberProfileComponent
+      }
     ]
   },
   {
