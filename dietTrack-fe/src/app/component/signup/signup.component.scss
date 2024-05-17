@@ -1,3 +1,4 @@
+
 .signup{
     position: relative;
     width:100%;
@@ -14,6 +15,13 @@ a{
     transition: .5s ease-in-out;
     align-items: center;
     justify-content: center;
+}
+h1{
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #573b8a;
 }
 
 label{
