@@ -1,11 +1,17 @@
+<div id="google-btn"></div>
+
 <div class="login">
     <form>
         <label for="chk" aria-hidden="true">Login</label>
+        <h1>DietTrack</h1>
         <input type="email" name="family_name" [(ngModel)]="loginObj.family_name" placeholder="Family Name" required="">
         <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" required="">
         <button (click)="onLogin()" >Login</button>
         <a [routerLink]="['/signup']">Sign up</a>
     </form>
+</div>
+
+
 
 
 <router-outlet></router-outlet>

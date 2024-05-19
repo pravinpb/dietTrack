@@ -1,3 +1,10 @@
+.google-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .login{
     position: relative;
     width:100%;
@@ -24,6 +31,13 @@ label{
     font-weight: bold;
     cursor: pointer;
     transition: .5s ease-in-out;
+}
+h1{
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #573b8a;
 }
 input{
     width: 60%;
@@ -56,4 +70,21 @@ button{
 }
 button:hover{
     background: #6d44b8;
+}
+.google-btn{
+    width: 25%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #633535;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
 }
